@@ -18,7 +18,7 @@ public class ABbotAutoRun extends PushBotTelemetrySensors {
 
     //--------------------------------------------------------------------------
     //
-    // RobotAutoRun
+    // RobotAutoRun2
     //
 
     /**
