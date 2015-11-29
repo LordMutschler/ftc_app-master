@@ -21,6 +21,13 @@ public class ABbotManualRun extends PushBotTelemetry{
 
     } // PushBotManual
 
+    public void update_telemetry () {
+        super.update_telemetry();
+        telemetry.addData( "23", "Debug Variable Long: " + getDebugVarLong());
+        telemetry.addData( "21", "Arm Position: " + left_arm_encoder_count());
+        telemetry.addData( "24", "Debug Variable Double: " + getDebugVarDouble());
+        telemetry.addData("22", "Arm Speed: " + getAveRightSpeed());
+    }
     //--------------------------------------------------------------------------
     //
     // loop
@@ -35,10 +42,11 @@ public class ABbotManualRun extends PushBotTelemetry{
     @Override public void loop ()
 
     {
-        int CurrentPos = a_left_arm_encoder_count();
+        int CurrentPos = left_arm_encoder_count();
         long CurrentTime = System.currentTimeMillis ();
 
         RightArmSpeed = (double)(CurrentPos-PreviousPos)/(CurrentTime-PreviousTime);
+        AveRightSpeed = (3*AveRightSpeed + RightArmSpeed)/4;
         debugVarLong = CurrentTime-PreviousTime;
         debugVarDouble = (double)(CurrentPos-PreviousPos);
         PreviousPos = CurrentPos;
@@ -108,5 +116,30 @@ public class ABbotManualRun extends PushBotTelemetry{
 
     } // loop
 
+
+    public double getDebugVarDouble() {
+
+        return debugVarDouble;
+    }
+
+    public long getDebugVarLong() {
+        return debugVarLong;
+    }
+    public double getAveRightSpeed ()
+    {
+        return AveRightSpeed;
+
+    } // a_left_encoder_count
+    public double getRightArmSpeed ()
+    {
+        return RightArmSpeed;
+
+    } // a_left_encoder_count
+    public int PreviousPos ;//= 0 ;//
+    public long PreviousTime;// = 0;
+    public double RightArmSpeed;
+    public double debugVarDouble;
+    public long debugVarLong;
+    public double AveRightSpeed;
 
 }

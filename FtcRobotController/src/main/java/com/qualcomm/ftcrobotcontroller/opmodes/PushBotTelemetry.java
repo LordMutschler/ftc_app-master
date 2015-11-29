@@ -67,7 +67,6 @@ public class PushBotTelemetry extends PushBotHardware
      * Update the telemetry with current values from the base class.
      */
     public void update_telemetry ()
-
     {
         if (a_warning_generated ())
         {
@@ -94,11 +93,6 @@ public class PushBotTelemetry extends PushBotHardware
                 ( "03"
                         , "Left Arm: " + a_left_arm_power()
                 );
-        telemetry.addData( "23", "Debug Variable Long: " + getDebugVarLong());
-        telemetry.addData( "21", "Arm Position: " + a_left_arm_encoder_count());
-        telemetry.addData( "24", "Debug Variable Double: " + getDebugVarDouble());
-        telemetry.addData( "22", "Arm Speed: " + getRightArmSpeed());
-
     } // update_telemetry
 
     //--------------------------------------------------------------------------

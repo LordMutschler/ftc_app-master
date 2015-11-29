@@ -249,25 +249,7 @@ public class PushBotHardware extends OpMode
      *
      * The system calls this member repeatedly while the OpMode is running.
      */
-    @Override public void loop ()
-
-    {
-
-        int currentPos = a_left_encoder_count();
-        long currentTime = System.currentTimeMillis();
-
-        rightArmSpeed = (currentPos - previousPos)/(currentTime - previousTime);
-        previousPos = currentPos;
-        previousTime = currentTime;
-        //
-        // Only actions that are common to all OpModes (i.e. both auto and\
-        // manual) should be implemented here.
-        //
-        // This method is designed to be overridden.
-        //
-
-    } // loop
-
+    @Override public void loop (){}
     //--------------------------------------------------------------------------
     //
     // stop
@@ -1030,11 +1012,7 @@ public class PushBotHardware extends OpMode
             v_servo_right_hand.setPosition (Servo.MIN_POSITION);
         }
 
-    } // open_hand
-
-    private int previousPos = 0;
-    private long previousTime = 0;
-    public float rightArmSpeed;
+    } // open_han
 
     //--------------------------------------------------------------------------
     //
@@ -1099,38 +1077,16 @@ public class PushBotHardware extends OpMode
      * Manage the aspects of the right hand servo.
      */
     private Servo v_servo_right_hand;
-    public double getDebugVarDouble() {
 
-        return debugVarDouble;
-    }
 
-    public long getDebugVarLong() {
-        return debugVarLong;
-    }
-
-    public double getRightArmSpeed ()
+   public int left_arm_encoder_count ()
     {
-        return RightArmSpeed;
-
-    } // a_left_encoder_count
-    public int PreviousPos ;//= 0 ;//
-    public long PreviousTime;// = 0;
-    public double RightArmSpeed;// = 3.1415926535897932384;
-    public double debugVarDouble;
-    public long debugVarLong;
-
-
-    int a_left_arm_encoder_count ()
-
-    {
-        int l_return = 0;
-
         if (v_motor_left_arm != null)
         {
-            l_return = v_motor_left_arm.getCurrentPosition ();
+            return  v_motor_left_arm.getCurrentPosition ();
         }
 
-        return l_return;
+        return 0;
 
     }
 } // PushBotHardware
