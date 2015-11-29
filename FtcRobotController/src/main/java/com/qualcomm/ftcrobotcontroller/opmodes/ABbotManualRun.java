@@ -35,6 +35,14 @@ public class ABbotManualRun extends PushBotTelemetry{
     @Override public void loop ()
 
     {
+        int CurrentPos = a_left_arm_encoder_count();
+        long CurrentTime = System.currentTimeMillis ();
+
+        RightArmSpeed = (double)(CurrentPos-PreviousPos)/(CurrentTime-PreviousTime);
+        debugVarLong = CurrentTime-PreviousTime;
+        debugVarDouble = (double)(CurrentPos-PreviousPos);
+        PreviousPos = CurrentPos;
+        PreviousTime = CurrentTime;
         //----------------------------------------------------------------------
         //
         // DC Motors

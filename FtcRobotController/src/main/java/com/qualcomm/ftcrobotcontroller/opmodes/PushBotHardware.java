@@ -298,7 +298,7 @@ public class PushBotHardware extends OpMode
         //
         // Assume no scaling.
         //
-        float l_scale = 0.0f;
+        float l_scale;
 
         //
         // Ensure the values are legal.
@@ -1031,11 +1031,7 @@ public class PushBotHardware extends OpMode
         }
 
     } // open_hand
-    public float getRightArmSpeed ()
 
-    {
-        return rightArmSpeed;
-    }
     private int previousPos = 0;
     private long previousTime = 0;
     public float rightArmSpeed;
@@ -1103,5 +1099,38 @@ public class PushBotHardware extends OpMode
      * Manage the aspects of the right hand servo.
      */
     private Servo v_servo_right_hand;
+    public double getDebugVarDouble() {
 
+        return debugVarDouble;
+    }
+
+    public long getDebugVarLong() {
+        return debugVarLong;
+    }
+
+    public double getRightArmSpeed ()
+    {
+        return RightArmSpeed;
+
+    } // a_left_encoder_count
+    public int PreviousPos ;//= 0 ;//
+    public long PreviousTime;// = 0;
+    public double RightArmSpeed;// = 3.1415926535897932384;
+    public double debugVarDouble;
+    public long debugVarLong;
+
+
+    int a_left_arm_encoder_count ()
+
+    {
+        int l_return = 0;
+
+        if (v_motor_left_arm != null)
+        {
+            l_return = v_motor_left_arm.getCurrentPosition ();
+        }
+
+        return l_return;
+
+    }
 } // PushBotHardware

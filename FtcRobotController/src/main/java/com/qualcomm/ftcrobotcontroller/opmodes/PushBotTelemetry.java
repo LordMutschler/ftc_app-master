@@ -23,16 +23,16 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
  *     04 - The position being sent to the left and right hand's servo
  *          controller.
  *     05 - The negative value of gamepad 1's left stick's y (vertical; up/down)
-*          value.
-        *     06 - The negative value of gamepad 1's right stick's y (vertical;
-        *          up/down) value.
-        *     07 - The negative value of gamepad 2's left stick's y (vertical; up/down)
-        *          value.
-        *     08 - The value of gamepad 2's X button (true/false).
-        *     09 - The value of gamepad 2's Y button (true/false).
-        *     10 - The value of gamepad 1's left trigger value.
-        *     11 - The value of gamepad 1's right trigger value.
-        */
+ *          value.
+ *     06 - The negative value of gamepad 1's right stick's y (vertical;
+ *          up/down) value.
+ *     07 - The negative value of gamepad 2's left stick's y (vertical; up/down)
+ *          value.
+ *     08 - The value of gamepad 2's X button (true/false).
+ *     09 - The value of gamepad 2's Y button (true/false).
+ *     10 - The value of gamepad 1's left trigger value.
+ *     11 - The value of gamepad 1's right trigger value.
+ */
 public class PushBotTelemetry extends PushBotHardware
 
 {
@@ -46,7 +46,6 @@ public class PushBotTelemetry extends PushBotHardware
      * The system calls this member when the class is instantiated.
      */
     public PushBotTelemetry ()
-
     {
         //
         // Initialize base classes.
@@ -78,32 +77,27 @@ public class PushBotTelemetry extends PushBotHardware
         // Send telemetry data to the driver station.
         //
         telemetry.addData
-            ( "01"
-            , "Left Drive: "
-                + a_left_drive_power()
-                + ", "
-                + a_left_encoder_count()
-            );
+                ( "01"
+                        , "Left Drive: "
+                                + a_left_drive_power()
+                                + ", "
+                                + a_left_encoder_count()
+                );
         telemetry.addData
-            ( "02"
-            , "Right Drive: "
-                + a_right_drive_power()
-                + ", "
-                + a_right_encoder_count()
-            );
+                ( "02"
+                        , "Right Drive: "
+                                + a_right_drive_power ()
+                                + ", "
+                                + a_right_encoder_count ()
+                );
         telemetry.addData
-            ( "03"
-            , "Left Arm: " + a_left_arm_power()
-            );
-        telemetry.addData
-            ( "04"
-            , "Hand Position: " + a_hand_position()
-            );
-        telemetry.addData(
-                "05", "Extender Position: " + a_arm_extender()
-        );
-        telemetry.addData ("11", "Arm Encoder Speed " + getRightArmSpeed());
-
+                ( "03"
+                        , "Left Arm: " + a_left_arm_power()
+                );
+        telemetry.addData( "23", "Debug Variable Long: " + getDebugVarLong());
+        telemetry.addData( "21", "Arm Position: " + a_left_arm_encoder_count());
+        telemetry.addData( "24", "Debug Variable Double: " + getDebugVarDouble());
+        telemetry.addData( "22", "Arm Speed: " + getRightArmSpeed());
 
     } // update_telemetry
 
@@ -123,10 +117,10 @@ public class PushBotTelemetry extends PushBotHardware
         telemetry.addData ("05", "GP1 Left: " + -gamepad1.left_stick_y);
         telemetry.addData ("06", "GP1 Right: " + -gamepad1.right_stick_y);
         telemetry.addData ("07", "GP2 Left: " + -gamepad2.left_stick_y);
-        telemetry.addData ("08", "GP2 X: " + gamepad2.x);
-        telemetry.addData ("09", "GP2 Y: " + gamepad2.y);
-        telemetry.addData ("10", "GP1 LT: " + gamepad1.left_trigger);
-
+        telemetry.addData ("08", "GP2  Right: " + gamepad2.right_stick_y);
+        //  telemetry.addData ("09", "GP2 Y: " + gamepad2.y);
+        // telemetry.addData ("10", "GP1 LT: " + gamepad1.left_trigger);
+        //  telemetry.addData ("11", "GP1 RT: " + gamepad1.right_trigger);
 
     } // update_gamepad_telemetry
 
