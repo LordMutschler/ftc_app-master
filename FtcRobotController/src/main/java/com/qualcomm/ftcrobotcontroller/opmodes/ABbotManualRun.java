@@ -133,7 +133,6 @@ public class ABbotManualRun extends PushBotTelemetry{
     public double getRightArmSpeed ()
     {
         return RightArmSpeed;
-
     } // a_left_encoder_count
     public int PreviousPos ;//= 0 ;//
     public long PreviousTime;// = 0;

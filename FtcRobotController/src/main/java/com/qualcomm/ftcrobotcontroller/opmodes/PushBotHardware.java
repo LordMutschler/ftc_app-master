@@ -206,7 +206,8 @@ public class PushBotHardware extends OpMode
      *
      * A comma will be added before the specified message if the message isn't
      * empty.
-     */
+    */
+
     void m_warning_message (String p_exception_message)
 
     {
