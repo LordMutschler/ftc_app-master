@@ -142,12 +142,12 @@ public class PushBotHardware extends OpMode
 
         try
         {
-            v_servo_left_hand = hardwareMap.servo.get ("Obstacle_Defender");
+            v_servo_left_hand = hardwareMap.servo.get ("ObstacleDefender");
             v_servo_left_hand.setPosition (l_hand_position);
         }
         catch (Exception p_exeception)
         {
-            m_warning_message ("Obstacle_Defender");
+            m_warning_message ("ObstacleDefender");
             DbgLog.msg (p_exeception.getLocalizedMessage ());
 
             v_servo_left_hand = null;
