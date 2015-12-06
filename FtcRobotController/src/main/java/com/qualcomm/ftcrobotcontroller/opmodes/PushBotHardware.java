@@ -1017,14 +1017,14 @@ public class PushBotHardware extends OpMode
 
      public void defenderUp() {
          if (v_servo_left_hand != null) {
-             v_servo_left_hand.setPosition(Servo.MIN_POSITION);
+             v_servo_left_hand.setPosition(0.7D);
          }
      }
 
     public void defenderDown() {
 
             if (v_servo_left_hand != null) {
-                v_servo_left_hand.setPosition(0.7D);
+                v_servo_left_hand.setPosition(Servo.MIN_POSITION);
             }
 
     }
