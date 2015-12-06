@@ -138,7 +138,7 @@ public class PushBotHardware extends OpMode
         // Indicate the initial position of both the left and right servos.  The
         // hand should be halfway opened/closed.
         //
-        double l_hand_position = 0.5;
+        double l_hand_position = 0.7;
 
         try
         {
@@ -1013,8 +1013,21 @@ public class PushBotHardware extends OpMode
             v_servo_right_hand.setPosition (Servo.MIN_POSITION);
         }
 
-    } // open_han
+    }
 
+     public void defenderUp() {
+         if (v_servo_left_hand != null) {
+             v_servo_left_hand.setPosition(Servo.MIN_POSITION);
+         }
+     }
+
+    public void defenderDown() {
+
+            if (v_servo_left_hand != null) {
+                v_servo_left_hand.setPosition(0.7D);
+            }
+
+    }
     //--------------------------------------------------------------------------
     //
     // v_warning_generated
@@ -1068,7 +1081,7 @@ public class PushBotHardware extends OpMode
     /**
      * Manage the aspects of the left hand servo.
      */
-    public Servo v_servo_left_hand;
+    private Servo v_servo_left_hand;
 
     //--------------------------------------------------------------------------
     //

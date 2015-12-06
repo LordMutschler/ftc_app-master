@@ -85,12 +85,12 @@ public class ABbotManualRun extends PushBotTelemetry{
         // Manage the arm motor.
         //
 
-        if (gamepad2.dpad_down){
-             v_servo_left_hand.setPosition(Servo.MIN_POSITION);
+        if (gamepad2.dpad_up){
+            defenderUp();
         }
 
-        if (gamepad2.dpad_up){
-            v_servo_left_hand.setPosition(Servo.MAX_POSITION);
+        if (gamepad2.dpad_down){
+            defenderDown();
         }
 
         float l_left_arm_power = scale_motor_power((float)(gamepad2.left_stick_y - AveRightSpeed))/2;
