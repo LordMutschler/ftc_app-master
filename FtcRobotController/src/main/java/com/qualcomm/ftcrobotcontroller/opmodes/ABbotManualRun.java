@@ -84,6 +84,7 @@ public class ABbotManualRun extends PushBotTelemetry{
         //
         // Manage the arm motor.
         //
+
         if (gamepad2.dpad_down){
              v_servo_left_hand.setPosition(Servo.MIN_POSITION);
         }
@@ -92,8 +93,8 @@ public class ABbotManualRun extends PushBotTelemetry{
             v_servo_left_hand.setPosition(Servo.MAX_POSITION);
         }
 
+        float l_left_arm_power = scale_motor_power((float)(gamepad2.left_stick_y + AveRightSpeed))/2;
 
-        float l_left_arm_power = scale_motor_power (gamepad2.left_stick_y / 2);
             m_left_arm_power (l_left_arm_power);
 
         float l_arm_extender_power = scale_motor_power(-gamepad2.right_stick_y);

@@ -9,13 +9,6 @@
         <dex dex="C:\FTC\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-de0957b28afee72465b70cf5d7623f9101d7d5a7.jar" />
     </item>
     <item
-        jar="C:\FTC\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\FtcCommon-release\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="37738feb62fd1abd7395899609373e990483750f">
-        <dex dex="C:\FTC\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-04c90b9d3341cfe5ee33e9f47eb603f3132023ac.jar" />
-    </item>
-    <item
         jar="C:\FTC\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\Hardware-release\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
@@ -30,18 +23,25 @@
         <dex dex="C:\FTC\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-505e2fbc7ee1425ceeba4b7fd6e72b8f57765787.jar" />
     </item>
     <item
-        jar="C:\FTC\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\RobotCore-release\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="a5fadb0dbb392372142275356999752343e21148">
-        <dex dex="C:\FTC\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-b8be01c0cf09a74115c9a8af0d7dcae35c981a30.jar" />
-    </item>
-    <item
         jar="C:\FTC\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\Analytics-release\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="23c74caa2b901107adc4d0aec343c5b8e8be86fb">
         <dex dex="C:\FTC\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-7548aaa193a85d3f219e2b37221eec3d16f01199.jar" />
+    </item>
+    <item
+        jar="C:\FTC\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\FtcCommon-release\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="37738feb62fd1abd7395899609373e990483750f">
+        <dex dex="C:\FTC\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-04c90b9d3341cfe5ee33e9f47eb603f3132023ac.jar" />
+    </item>
+    <item
+        jar="C:\FTC\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\RobotCore-release\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a5fadb0dbb392372142275356999752343e21148">
+        <dex dex="C:\FTC\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-b8be01c0cf09a74115c9a8af0d7dcae35c981a30.jar" />
     </item>
 
 </items>
