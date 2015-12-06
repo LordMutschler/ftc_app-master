@@ -93,7 +93,7 @@ public class ABbotManualRun extends PushBotTelemetry{
             v_servo_left_hand.setPosition(Servo.MAX_POSITION);
         }
 
-        float l_left_arm_power = scale_motor_power((float)(gamepad2.left_stick_y + AveRightSpeed))/2;
+        float l_left_arm_power = scale_motor_power((float)(gamepad2.left_stick_y - AveRightSpeed))/2;
 
             m_left_arm_power (l_left_arm_power);
 

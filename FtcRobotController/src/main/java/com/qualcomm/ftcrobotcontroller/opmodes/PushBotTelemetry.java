@@ -108,9 +108,9 @@ public class PushBotTelemetry extends PushBotHardware
         //
         // Send telemetry data concerning gamepads to the driver station.
         //
-        telemetry.addData ("05", "GP1 Left: " + -gamepad1.left_stick_y);
-        telemetry.addData ("06", "GP1 Right: " + -gamepad1.right_stick_y);
-        telemetry.addData ("07", "GP2 Left: " + -gamepad2.left_stick_y);
+        telemetry.addData ("05", "GP1 Left: " + gamepad1.left_stick_y);
+        telemetry.addData ("06", "GP1 Right: " + gamepad1.right_stick_y);
+        telemetry.addData ("07", "GP2 Left: " + gamepad2.left_stick_y);
         telemetry.addData ("08", "GP2  Right: " + gamepad2.right_stick_y);
         //  telemetry.addData ("09", "GP2 Y: " + gamepad2.y);
         // telemetry.addData ("10", "GP1 LT: " + gamepad1.left_trigger);
