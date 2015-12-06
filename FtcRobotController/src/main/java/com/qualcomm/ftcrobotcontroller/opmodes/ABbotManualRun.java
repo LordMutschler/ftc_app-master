@@ -1,5 +1,7 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
+import com.qualcomm.robotcore.hardware.Servo;
+
 /**
  * Created by Infant Derrick on 11/15/2015.
  */
@@ -51,6 +53,8 @@ public class ABbotManualRun extends PushBotTelemetry{
         debugVarDouble = (double)(CurrentPos-PreviousPos);
         PreviousPos = CurrentPos;
         PreviousTime = CurrentTime;
+
+       
         //----------------------------------------------------------------------
         //
         // DC Motors
@@ -80,6 +84,15 @@ public class ABbotManualRun extends PushBotTelemetry{
         //
         // Manage the arm motor.
         //
+        if (gamepad2.dpad_down){
+             v_servo_left_hand.setPosition(Servo.MIN_POSITION);
+        }
+
+        if (gamepad2.dpad_up){
+            v_servo_left_hand.setPosition(Servo.MAX_POSITION);
+        }
+
+
         float l_left_arm_power = scale_motor_power (gamepad2.left_stick_y / 2);
             m_left_arm_power (l_left_arm_power);
 

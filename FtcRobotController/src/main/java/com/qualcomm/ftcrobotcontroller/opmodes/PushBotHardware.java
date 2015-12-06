@@ -142,12 +142,12 @@ public class PushBotHardware extends OpMode
 
         try
         {
-            v_servo_left_hand = hardwareMap.servo.get ("left_hand");
+            v_servo_left_hand = hardwareMap.servo.get ("Obstacle_Defender");
             v_servo_left_hand.setPosition (l_hand_position);
         }
         catch (Exception p_exeception)
         {
-            m_warning_message ("left_hand");
+            m_warning_message ("Obstacle_Defender");
             DbgLog.msg (p_exeception.getLocalizedMessage ());
 
             v_servo_left_hand = null;
@@ -1068,7 +1068,7 @@ public class PushBotHardware extends OpMode
     /**
      * Manage the aspects of the left hand servo.
      */
-    private Servo v_servo_left_hand;
+    public Servo v_servo_left_hand;
 
     //--------------------------------------------------------------------------
     //

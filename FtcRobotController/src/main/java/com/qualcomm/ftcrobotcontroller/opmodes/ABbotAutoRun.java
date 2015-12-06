@@ -22,7 +22,7 @@ public class ABbotAutoRun extends PushBotTelemetrySensors {
     //
 
     /**
-     * Construct the class.
+     * Construct the class.q
      * <p/>
      * The system calls this member when the class is instantiated.
      */
