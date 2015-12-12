@@ -84,18 +84,15 @@ public class ABbotManualRun extends PushBotTelemetry{
         //
         // Manage the arm motor.
         //
-
+        float l_left_arm_power = scale_motor_power((float)(gamepad2.left_stick_y - AveRightSpeed))/2;
         if (gamepad2.dpad_up){
-            defenderUp();
+            l_left_arm_power = 1;
         }
 
         if (gamepad2.dpad_down){
             defenderDown();
         }
-
-        float l_left_arm_power = scale_motor_power((float)(gamepad2.left_stick_y - AveRightSpeed))/2;
-
-            m_left_arm_power (l_left_arm_power);
+        m_left_arm_power (l_left_arm_power);
 
         float l_arm_extender_power = scale_motor_power(-gamepad2.right_stick_y);
             m_arm_extender(l_arm_extender_power);
