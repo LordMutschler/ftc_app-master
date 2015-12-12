@@ -44,6 +44,7 @@ public class ABbotManualRun extends PushBotTelemetry{
     @Override public void loop ()
 
     {
+        have_drive_encoders_reset();
         int CurrentPos = left_arm_encoder_count();
         long CurrentTime = System.currentTimeMillis ();
 

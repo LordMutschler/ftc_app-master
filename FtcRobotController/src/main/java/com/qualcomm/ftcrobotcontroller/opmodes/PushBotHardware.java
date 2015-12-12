@@ -706,8 +706,8 @@ public class PushBotHardware extends OpMode
         }
 
         //
-        // Return the status.
         //
+        // Return the status.
         return l_return;
 
     } // have_encoders_reached

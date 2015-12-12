@@ -13,7 +13,7 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
  * @author Infant Derrick
  * @version 2015-08-13-19-48
  */
-public class ABbotAutoRun extends PushBotTelemetrySensors {
+public class ABbotAutoRun extends PushBotTelemetry {
 
 
     //--------------------------------------------------------------------------
@@ -96,7 +96,7 @@ public class ABbotAutoRun extends PushBotTelemetrySensors {
                 if (have_drive_encoders_reset()) {
                     //
                     // Begin the next state.  Drive forward.
-                    drive_using_encoders(-1.0f, 1.0f, -2880, 2880);
+                    drive_using_encoders(-1.0f, 1.0f, -850, 850);
 
                     //
                     // Transition to the next state.
@@ -124,7 +124,7 @@ public class ABbotAutoRun extends PushBotTelemetrySensors {
                 // When the encoder values have been reached the call resets the
                 // encoders, halts the motors, and returns true.
                 //
-                if (drive_using_encoders(1.0f, 1.0f, 2880, 2880)) {
+                if (drive_using_encoders(-1.0f, 1.0f, -850, 850)) {
                     //
                     // The drive wheels have reached the specified encoder values,
                     // so transition to the next state when this method is called
@@ -149,7 +149,7 @@ public class ABbotAutoRun extends PushBotTelemetrySensors {
                     // (drive_using_encoders makes the run_using_encoders call,
                     // which won't be processed until this method exits).
                     //
-                    drive_using_encoders(-1.0f, 1.0f, -2880, 2880);
+                    drive_using_encoders(1.0f, 1.0f, 2880, 2880);
 
                     //
                     // Start the arm state machine.
@@ -171,14 +171,81 @@ public class ABbotAutoRun extends PushBotTelemetrySensors {
                 //
                 // Continue turning left, if necessary.
                 //
-                if (drive_using_encoders(-1.0f, 1.0f, -2880, 2880)) {
+                if (drive_using_encoders(1.0f, 1.0f, 2880, 2880)) {
                     v_state++;
                 }
                 break;
             //
+            case 4:
+            if (have_drive_encoders_reset()) {
+                //
+                // Begin the next state.  Turn left.
+                //
+                // There is no conditional (if statement) here, because the
+                // encoders can't be read until the next cycle
+                // (drive_using_encoders makes the run_using_encoders call,
+                // which won't be processed until this method exits).
+                //
+                drive_using_encoders(1.0f, -1.0f, 2000, -2000);
+
+                //
+                // Start the arm state machine.
+                //
+
+
+                //
+                // The drive wheels have reached the specified encoder values,
+                // so transition to the next state when this method is called
+                // again.
+                //
+                v_state++;
+            }
+            break;
             // State 4.
             //
-            case 4:
+            case 5:
+                //
+                // Continue turning left, if necessary.
+                //
+                if (drive_using_encoders(1.0f, -1.0f, 2000, -2000)) {
+                    v_state++;
+                }
+                break;
+            case 6:
+                if (have_drive_encoders_reset()) {
+                    //
+                    // Begin the next state.  Turn left.
+                    //
+                    // There is no conditional (if statement) here, because the
+                    // encoders can't be read until the next cycle
+                    // (drive_using_encoders makes the run_using_encoders call,
+                    // which won't be processed until this method exits).
+                    //
+                    drive_using_encoders(-1.0f, -1.0f, -6880, -6880);
+
+                    //
+                    // Start the arm state machine.
+                    //
+
+
+                    //
+                    // The drive wheels have reached the specified encoder values,
+                    // so transition to the next state when this method is called
+                    // again.
+                    //
+                    v_state++;
+                }
+                break;
+
+            case 7:
+                //
+                // Continue turning left, if necessary.
+                //
+                if (drive_using_encoders(-1.0f, -1.0f, -6880, -6880)) {
+                    v_state++;
+                }
+                break;
+            case 8:
                 //
                 // As soon as the drive encoders reset, begin the next state.
                 //
@@ -200,7 +267,7 @@ public class ABbotAutoRun extends PushBotTelemetrySensors {
             //
             // State 5.
             //
-            case 5:
+            /*case 5:
                 //
                 // Drive forward until a white line is detected.
                 //
@@ -227,8 +294,9 @@ public class ABbotAutoRun extends PushBotTelemetrySensors {
                 //
                 else {
                     set_drive_power(1.0, 1.0);
-                }
-                break;
+                }\
+                break;*/
+
             //
             // State 6.
             //
