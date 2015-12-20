@@ -87,7 +87,7 @@ public class ABbotManualRun extends PushBotTelemetry{
         //
         float l_left_arm_power = scale_motor_power((float)(gamepad2.left_stick_y - AveRightSpeed))/2;
         if (gamepad2.dpad_up){
-            l_left_arm_power = 1;
+             scale_motor_power((float)(gamepad2.left_stick_y));
         }
 
         if (gamepad2.dpad_down){

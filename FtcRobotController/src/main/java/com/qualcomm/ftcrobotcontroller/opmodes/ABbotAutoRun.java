@@ -101,7 +101,7 @@ public class ABbotAutoRun extends PushBotTelemetry {
                     //
                     // Transition to the next state.
                     //
-                    v_state++;
+                    v_state++;2;
                 }
 
                 break;
