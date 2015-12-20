@@ -82,7 +82,7 @@ public class ABbotManualRun extends PushBotTelemetry{
 
         set_drive_power (l_left_drive_power, l_right_drive_power);
 
-        //
+        //ghgg
         // Manage the arm motor.
         // thats ome cheese
         float l_left_arm_power = scale_motor_power((float)(gamepad2.left_stick_y - AveRightSpeed))/2;
