@@ -16,6 +16,13 @@
         <dex dex="C:\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-35e244d4623b6eda1136c432786b87aba3c71605.jar" />
     </item>
     <item
+        jar="C:\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\ModernRobotics-release\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f71d91f91744fdbed74e2bf39f91268d1580cefc">
+        <dex dex="C:\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-fb7647e2a6a92e0182167f7f0ae07c00a35d23b2.jar" />
+    </item>
+    <item
         jar="C:\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\WirelessP2p-release\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
@@ -28,13 +35,6 @@
         revision="23.0.1"
         sha1="16efc4540aa5ac1cce5fde6c57edc09f5bc12e92">
         <dex dex="C:\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-fcce87e1d9f72a9929d5ae46cfa5c5c0a9f15f5d.jar" />
-    </item>
-    <item
-        jar="C:\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\ModernRobotics-release\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="f71d91f91744fdbed74e2bf39f91268d1580cefc">
-        <dex dex="C:\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-fb7647e2a6a92e0182167f7f0ae07c00a35d23b2.jar" />
     </item>
     <item
         jar="C:\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\FtcCommon-release\jars\classes.jar"

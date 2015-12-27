@@ -72,11 +72,11 @@ public class PushBotHardwareSensors extends PushBotTelemetry
         //
         try
         {
-            v_sensor_touch = hardwareMap.touchSensor.get ("sensor_touch");
+            v_sensor_touch = hardwareMap.touchSensor.get ("armtouch");
         }
         catch (Exception p_exeception)
         {
-            m_warning_message ("sensor_touch");
+            m_warning_message ("armtouch");
             DbgLog.msg (p_exeception.getLocalizedMessage ());
 
             v_sensor_touch = null;
@@ -138,7 +138,7 @@ public class PushBotHardwareSensors extends PushBotTelemetry
     /**
      * Indicate whether the touch sensor has been pressed.
      */
-    boolean is_touch_sensor_pressed ()
+   public boolean is_touch_sensor_pressed ()
 
     {
         boolean l_return = false;

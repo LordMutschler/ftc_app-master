@@ -96,7 +96,7 @@ public class ABbotAutoRun extends PushBotTelemetry {
                 if (have_drive_encoders_reset()) {
                     //
                     // Begin the next state.  Drive forward.
-                    drive_using_encoders(-1.0f, 1.0f, -850, 850);
+                    drive_using_encoders(-1.0f, 1.0f, -880, 880);
 
                     //
                     // Transition to the next state.
@@ -124,8 +124,9 @@ public class ABbotAutoRun extends PushBotTelemetry {
                 // When the encoder values have been reached the call resets the
                 // encoders, halts the motors, and returns true.
                 //
-                if (drive_using_encoders(-1.0f, 1.0f, -850, 850)) {
-                    //
+                if (drive_using_encoders(-1.0f, 1.0f, -880, 880)) {
+                    //-1.0f, -1.0f, -6880, -6880
+                    //-1.0f, 1.0f, -850, 850
                     // The drive wheels have reached the specified encoder values,
                     // so transition to the next state when this method is called
                     // again.
@@ -149,16 +150,16 @@ public class ABbotAutoRun extends PushBotTelemetry {
                     // (drive_using_encoders makes the run_using_encoders call,
                     // which won't be processed until this method exits).
                     //
-                    drive_using_encoders(1.0f, 1.0f, 2880, 2880);
+                    drive_using_encoders(1.0f, 1.0f, 15000,15000);
 
                     //
                     // Start the arm state machine.
                     //
 
+                    //                    // so transition to the next state when this method is called
 
-                    //
-                    // The drive wheels have reached the specified encoder values,
-                    // so transition to the next state when this method is called
+                    // The d
+//rive wheels have reached the specified encoder values,
                     // again.
                     //
                     v_state++;
@@ -171,7 +172,7 @@ public class ABbotAutoRun extends PushBotTelemetry {
                 //
                 // Continue turning left, if necessary.
                 //
-                if (drive_using_encoders(1.0f, 1.0f, 2880, 2880)) {
+                if (drive_using_encoders(1.0f, 1.0f, 15000,15000)) {
                     v_state++;
                 }
                 break;
@@ -208,7 +209,9 @@ public class ABbotAutoRun extends PushBotTelemetry {
                 // Continue turning left, if necessary.
                 //
                 if (drive_using_encoders(1.0f, -1.0f, 2000, -2000)) {
+                    reset_drive_encoders();
                     v_state++;
+
                 }
                 break;
             case 6:
