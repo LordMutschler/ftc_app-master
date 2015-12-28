@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.TouchSensor;
 
 /**
- * Created by Infant Derrick on 11/15/2015.
+ * Created by Infant Derrick on 12/28/2015.
  */
 public class ABbotManualRun extends ABbotTelemetry {
 
@@ -132,14 +132,14 @@ public class ABbotManualRun extends ABbotTelemetry {
 
 
         m_left_arm_power(l_left_arm_power);
-
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         float l_arm_extender_power = scale_motor_power(-gamepad2.right_stick_y);
         if (!gamepad2.b && is_touch_sensor_pressed()) {
             if  ( !previousButtonPressed){
                 if(gamepad2.right_stick_y >= 0) {
-                    allowedDirection = -1;
-                }else{
-                    allowedDirection = 1;
+                    allowedDirection = -1; //up
+                }else{// showing direction var
+                    allowedDirection = 1; //down
                 }
             }
             if (allowedDirection > 0 && gamepad2.right_stick_y < 0){
@@ -153,7 +153,7 @@ public class ABbotManualRun extends ABbotTelemetry {
             previousButtonPressed = false;
         }
         m_arm_extender(l_arm_extender_power);
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //----------------------------------------------------------------------
         //
@@ -169,6 +169,8 @@ public class ABbotManualRun extends ABbotTelemetry {
         // The setPosition methods write the motor power values to the Servo
         // class, but the positions aren't applied until this method ends.
         //
+
+
         if (gamepad2.x) {
             m_hand_position(a_hand_position() + 0.05);
         } else if (gamepad2.b) {
@@ -183,7 +185,7 @@ public class ABbotManualRun extends ABbotTelemetry {
 
     } // loop
 
-
+    // debugging for the Avg Speed controller
     public double getDebugVarDouble() {
 
         return debugVarDouble;
@@ -201,6 +203,7 @@ public class ABbotManualRun extends ABbotTelemetry {
     public double getRightArmSpeed() {
         return RightArmSpeed;
     } // a_left_encoder_count
+    //method to check for touch sensor; implemented from "PushbotHardwareSensors.java"
     public boolean is_touch_sensor_pressed ()
 
     {
@@ -223,6 +226,8 @@ public class ABbotManualRun extends ABbotTelemetry {
     public boolean previousButtonPressed = false;
     public int allowedDirection = -1;
     private TouchSensor v_sensor_touch;
+
+    //all variable declaration outside the loop
 
 
 

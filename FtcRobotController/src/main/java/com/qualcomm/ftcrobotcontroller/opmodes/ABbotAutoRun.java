@@ -11,7 +11,7 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
  * machine for the Push Bot.
  *
  * @author Infant Derrick
- * @version 2015-08-13-19-48
+ * @version 2015-12-28-19-49
  */
 public class ABbotAutoRun extends ABbotTelemetry {
 
@@ -19,6 +19,19 @@ public class ABbotAutoRun extends ABbotTelemetry {
     //--------------------------------------------------------------------------
     //
     // RobotAutoRun2
+    //
+
+    /**
+     * This class member remembers which state is currently active.  When the
+     * start method is called, the state will be initialize (0).  During the
+     * first iteration of the loop method, the state will change from initialize
+     * to state_1.  When state_1 actions are complete, the state will change to
+     * state_2.  This implements a state machine for the loop method.
+     */
+    private int v_state = 0;
+    //--------------------------------------------------------------------------
+    //
+    // start
     //
 
     /**
@@ -40,9 +53,10 @@ public class ABbotAutoRun extends ABbotTelemetry {
         // All via self-construction.
 
     } // RobotAutoRun
+
     //--------------------------------------------------------------------------
     //
-    // start
+    // loop
     //
 
     /**
@@ -68,7 +82,18 @@ public class ABbotAutoRun extends ABbotTelemetry {
 
     //--------------------------------------------------------------------------
     //
-    // loop
+    // update_arm_state
+    //
+
+    /**
+     * Implement a state machine that controls the arm during auto-operation.
+     */
+
+ // update_arm_state
+
+    //--------------------------------------------------------------------------
+    //
+    // v_state
     //
 
     /**
@@ -329,30 +354,6 @@ public class ABbotAutoRun extends ABbotTelemetry {
 
 
     } // loop
-
-    //--------------------------------------------------------------------------
-    //
-    // update_arm_state
-    //
-
-    /**
-     * Implement a state machine that controls the arm during auto-operation.
-     */
-
- // update_arm_state
-
-    //--------------------------------------------------------------------------
-    //
-    // v_state
-    //
-    /**
-     * This class member remembers which state is currently active.  When the
-     * start method is called, the state will be initialize (0).  During the
-     * first iteration of the loop method, the state will change from initialize
-     * to state_1.  When state_1 actions are complete, the state will change to
-     * state_2.  This implements a state machine for the loop method.
-     */
-    private int v_state = 0;
 
     //--------------------------------------------------------------------------
     //
