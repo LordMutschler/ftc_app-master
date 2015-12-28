@@ -104,15 +104,19 @@ public class ABbotManualRun extends ABbotTelemetry {
         //
         // Manage the drive wheel motors.
         //
-        float l_left_drive_power = scale_motor_power(gamepad1.left_stick_y);
-        float l_right_drive_power = scale_motor_power(gamepad1.right_stick_y);
+
 
         if (gamepad1.a) {
-            l_left_drive_power = 0.1f;
-                    l_right_drive_power = 0.1f;
+            float l_left_drive_power = 0.1f;
+            float l_right_drive_power = 0.1f;
+            set_drive_power(l_left_drive_power, l_right_drive_power);
+        }else{
+            float l_left_drive_power = scale_motor_power(gamepad1.left_stick_y);
+            float l_right_drive_power = scale_motor_power(gamepad1.right_stick_y);
+            set_drive_power(l_left_drive_power, l_right_drive_power);
         }
 
-        set_drive_power(l_left_drive_power, l_right_drive_power);
+
 
         //
         // Manage the arm motor.
