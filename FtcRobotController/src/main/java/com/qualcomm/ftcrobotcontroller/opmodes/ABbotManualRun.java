@@ -214,7 +214,7 @@ public class ABbotManualRun extends PushBotTelemetry {
     public boolean previousButtonPressed = false;
     public int allowedDirection = -1;
     private TouchSensor v_sensor_touch;
-    private boolean bPressed = false;
+
 
 
 }
