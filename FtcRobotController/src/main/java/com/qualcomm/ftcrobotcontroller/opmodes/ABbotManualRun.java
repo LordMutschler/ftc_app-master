@@ -107,6 +107,11 @@ public class ABbotManualRun extends ABbotTelemetry {
         float l_left_drive_power = scale_motor_power(gamepad1.left_stick_y);
         float l_right_drive_power = scale_motor_power(gamepad1.right_stick_y);
 
+        if (gamepad1.a) {
+            l_left_drive_power = 0.1f;
+                    l_right_drive_power = 0.1f;
+        }
+
         set_drive_power(l_left_drive_power, l_right_drive_power);
 
         //
@@ -119,9 +124,7 @@ public class ABbotManualRun extends ABbotTelemetry {
         float l_left_arm_power = scale_motor_power((float) (gamepad2.left_stick_y - AveRightSpeed)) * left_power_scale;
 
 
-        if (gamepad2.dpad_down) {
-            defenderDown();
-        }
+
 
 
         m_left_arm_power(l_left_arm_power);
