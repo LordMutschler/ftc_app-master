@@ -13,7 +13,7 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
  * @author Infant Derrick
  * @version 2015-08-13-19-48
  */
-public class ABbotAutoRun extends PushBotTelemetry {
+public class ABbotAutoRun extends ABbotTelemetry {
 
 
     //--------------------------------------------------------------------------

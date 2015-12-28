@@ -22,7 +22,7 @@ import com.qualcomm.robotcore.util.Range;
  * @author SSI Robotics
  * @version 2015-08-13-20-04
  */
-public class PushBotHardwareSensors extends PushBotTelemetry
+public class PushBotHardwareSensors extends ABbotTelemetry
 
 {
     //--------------------------------------------------------------------------

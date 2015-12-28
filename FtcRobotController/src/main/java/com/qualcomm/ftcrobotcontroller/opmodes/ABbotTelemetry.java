@@ -33,7 +33,7 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
  *     10 - The value of gamepad 1's left trigger value.
  *     11 - The value of gamepad 1's right trigger value.
  */
-public class PushBotTelemetry extends PushBotHardware
+public class ABbotTelemetry extends ABbotHardware
 
 {
     //--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ public class PushBotTelemetry extends PushBotHardware
      *
      * The system calls this member when the class is instantiated.
      */
-    public PushBotTelemetry ()
+    public ABbotTelemetry ()
     {
         //
         // Initialize base classes.

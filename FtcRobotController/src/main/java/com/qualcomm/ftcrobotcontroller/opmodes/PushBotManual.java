@@ -12,7 +12,7 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
  * @author SSI Robotics
  * @version 2015-08-01-06-01
  */
-public class PushBotManual extends PushBotTelemetry
+public class PushBotManual extends ABbotTelemetry
 
 {
     //--------------------------------------------------------------------------

@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.TouchSensor;
 /**
  * Created by Infant Derrick on 11/15/2015.
  */
-public class ABbotManualRun extends PushBotTelemetry {
+public class ABbotManualRun extends ABbotTelemetry {
 
     public ABbotManualRun()
 
@@ -146,6 +146,8 @@ public class ABbotManualRun extends PushBotTelemetry {
             previousButtonPressed = false;
         }
         m_arm_extender(l_arm_extender_power);
+
+
         //----------------------------------------------------------------------
         //
         // Servo Motors
