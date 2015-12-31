@@ -123,7 +123,11 @@ public class ABbotManualRun extends ABbotTelemetry {
         float left_power_scale = 0.5f;
         if (gamepad2.dpad_up) {
             left_power_scale = 1.0f;
-        }
+        }// turbo mode
+
+        if (gamepad2.dpad_down) {
+        left_power_scale = 0.25f;
+    }// slow down mode
         float l_left_arm_power = scale_motor_power((float) (gamepad2.left_stick_y - AveRightSpeed)) * left_power_scale;
 
 
